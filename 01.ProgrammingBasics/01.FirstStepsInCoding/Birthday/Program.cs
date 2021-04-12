@@ -14,6 +14,8 @@ namespace Birthday
 
             double finalPrice = rent + cake + bavarages + animator;
             Console.WriteLine(finalPrice);
+
+            Console.WriteLine("test changes");
         }
     }
 }
