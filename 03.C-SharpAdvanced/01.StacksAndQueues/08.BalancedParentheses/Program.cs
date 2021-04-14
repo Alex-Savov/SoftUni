@@ -11,7 +11,6 @@ namespace _08.BalancedParentheses
             string input = Console.ReadLine();
 
             Stack<char> stackOpen = new Stack<char>();
-            Queue<char> queueClose = new Queue<char>();
 
             Regex rgx = new Regex(@"\(\)|{}|\[\]");
             bool isBalanced = true;
