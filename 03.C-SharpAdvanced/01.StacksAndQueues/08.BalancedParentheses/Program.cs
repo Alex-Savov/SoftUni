@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace _08.BalancedParentheses
@@ -15,7 +14,7 @@ namespace _08.BalancedParentheses
             Queue<char> queueClose = new Queue<char>();
 
             Regex rgx = new Regex(@"\(\)|{}|\[\]");
-
+            bool isBalanced = true;
 
             foreach (var item in input)
             {
@@ -40,13 +39,12 @@ namespace _08.BalancedParentheses
                     }
                     else
                     {
-                        queueClose.Enqueue(item);
+                        isBalanced = false;
+                        break;
                     }
                 }
             }
 
-
-            bool isBalanced = (stackOpen.Count == 0) && (queueClose.Count == 0);
             Console.WriteLine(isBalanced ? "YES" : "NO");
         }
     }
