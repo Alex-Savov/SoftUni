@@ -30,16 +30,18 @@ namespace _02.SetsOfElements
                 }
             }
 
-            foreach (var num in first)
-            {
-                foreach (var number in second)
-                {
-                    if (num == number)
-                    {
-                        Console.Write($"{num} ");
-                    }
-                }
-            }
+            //foreach (var num in first)
+            //{
+            //    foreach (var number in second)
+            //    {
+            //        if (num == number)
+            //        {
+            //            Console.Write($"{num} ");
+            //        }
+            //    }
+            //}
+
+            Console.WriteLine(string.Join(' ', first.Intersect(second)));
         }
     }
 }
