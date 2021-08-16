@@ -1,77 +1,100 @@
 ﻿using System;
 using System.Linq;
 
-namespace _06.Jagged_ArrayModification
+namespace _06.JaggedArrayManipulator
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int rows = int.Parse(Console.ReadLine());
+            int maxRows = int.Parse(Console.ReadLine());
+            double[][] matrix = new double[maxRows][];
 
-            int[][] jagArr = ReadJaggedArray(rows);
+            ReadMatrixFromConsole(matrix);
 
-            string inputCommand = Console.ReadLine();
+            AnalazyngMAtrix(matrix);
 
-            while (inputCommand != "END")
+            string command = Console.ReadLine();
+
+            while (command.ToLower() != "end")
             {
-                string[] tokensComand = inputCommand
+                string[] commandArgs = command
                     .Split(' ', StringSplitOptions.RemoveEmptyEntries);
-                string command = tokensComand[0];
-                int row = int.Parse(tokensComand[1]);
-                int col = int.Parse(tokensComand[2]);
-                int value = int.Parse(tokensComand[3]);
 
-                bool isCoordinatesValid =
-                    (row >= 0 && row < jagArr.Length)
-                    && (col >= 0 && col < jagArr[row].Length);
+                string action = commandArgs[0].ToLower();
+                int row = int.Parse(commandArgs[1]);
+                int col = int.Parse(commandArgs[2]);
+                double value = double.Parse(commandArgs[3]);
 
-                if (isCoordinatesValid)
+                if ((row >= 0 && row < matrix.GetLength(0))
+                    && (col >= 0 && col < matrix[row].Length))
                 {
-                    switch (command)
+                    if (action == "add")
                     {
-                        case "Add":
-                            jagArr[row][col] += value;
-                            break;
-                        case "Subtract":
-                            jagArr[row][col] -= value;
-                            break;
+                        matrix[row][col] += value;
+                    }
+                    else if (action == "subtract")
+                    {
+                        matrix[row][col] -= value;
+                    }
+                }
+
+                command = Console.ReadLine();
+            }
+
+            PrintMatrix(matrix);
+        }
+
+        private static void PrintMatrix(double[][] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                Console.WriteLine(string.Join(' ', matrix[i]));
+            }
+        }
+
+        private static void AnalazyngMAtrix(double[][] matrix)
+        {
+            for (int i = 0; i < matrix.GetLength(0) - 1; i++)
+            {
+                if (matrix[i].Length == matrix[i + 1].Length)
+                {
+                    for (int j = 0; j < matrix[i].Length; j++)
+                    {
+                        matrix[i][j] *= 2;
+                        matrix[i + 1][j] *= 2;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid coordinates");
+                    for (int j = 0; j < matrix[i].Length; j++)
+                    {
+                        matrix[i][j] /= 2;
+                    }
+
+                    for (int k = 0; k < matrix[i + 1].Length; k++)
+                    {
+                        matrix[i + 1][k] /= 2;
+                    }
                 }
-
-                inputCommand = Console.ReadLine();
-            }
-
-            foreach (var arr in jagArr)
-            {
-                Console.WriteLine(string.Join(' ', arr));
             }
         }
-        static int[][] ReadJaggedArray(int rowMax)
+
+        private static void ReadMatrixFromConsole(double[][] matrix)
         {
-
-            int[][] jagArr = new int[rowMax][];
-
-            for (int row = 0; row < rowMax; row++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                int[] arrElements = Console.ReadLine()
-                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse)
-                .ToArray();
+                double[] input = Console.ReadLine()
+                    .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                    .Select(double.Parse)
+                    .ToArray();
+                matrix[i] = new double[input.Length];
 
-                jagArr[row] = new int[arrElements.Length];
-
-                for (int col = 0; col < arrElements.Length; col++)
+                for (int j = 0; j < input.Length; j++)
                 {
-                    jagArr[row][col] = arrElements[col];
+                    matrix[i][j] = input[j];
                 }
             }
-
-            return jagArr;
         }
     }
 }
