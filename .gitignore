@@ -1,2 +1,7 @@
 bin
 obj
+/03.C-SharpAdvanced/04.StreamsFilesАndDirectories/01.EvenLines/*.txt
+/03.C-SharpAdvanced/04.StreamsFilesАndDirectories/01.OddLines/Input.txt
+*.txt
+*.pptx
+*.docx
