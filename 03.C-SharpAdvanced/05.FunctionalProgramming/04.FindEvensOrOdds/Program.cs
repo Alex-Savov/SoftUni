@@ -8,16 +8,26 @@ namespace _04.FindEvensOrOdds
     {
         static void Main(string[] args)
         {
-            Predicate<int> predicate = Console.ReadLine() == "even"
-               ? num => num % 2 == 0
-               : new Predicate<int>(num => num % 2 != 0);
-
-            Console.ReadLine()
+            int[] range = Console.ReadLine()
                 .Split(' ', StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
-                .Where(n => predicate(n))
-                .ToList()
-                .ForEach(n => Console.Write($"{n} "));
+                .ToArray();
+
+            Predicate<int> predicate = Console.ReadLine() == "even"
+                ? num => num % 2 == 0
+                : new Predicate<int>(num => num % 2 != 0);
+
+            List<int> result = new List<int>();
+
+            for (int i = range[0]; i <= range[1]; i++)
+            {
+                if (predicate(i))
+                {
+                    result.Add(i);
+                }
+            }
+
+            Console.WriteLine(string.Join(' ', result));
         }
     }
 }
