@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.BirthdayCelebration", "01.BirthdayCelebration\01.BirthdayCelebration.csproj", "{68F91227-1539-4A0E-95A0-1EBC623A1598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.TheBattleOfTheFiveArmies", "02.TheBattleOfTheFiveArmies\02.TheBattleOfTheFiveArmies.csproj", "{77DF865A-96F1-4822-BFA1-CAD7E15BB880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68F91227-1539-4A0E-95A0-1EBC623A1598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F91227-1539-4A0E-95A0-1EBC623A1598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F91227-1539-4A0E-95A0-1EBC623A1598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F91227-1539-4A0E-95A0-1EBC623A1598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77DF865A-96F1-4822-BFA1-CAD7E15BB880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77DF865A-96F1-4822-BFA1-CAD7E15BB880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77DF865A-96F1-4822-BFA1-CAD7E15BB880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77DF865A-96F1-4822-BFA1-CAD7E15BB880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD7870BB-E794-4E3B-AD2E-1482D103D5E0}
+	EndGlobalSection
+EndGlobal
