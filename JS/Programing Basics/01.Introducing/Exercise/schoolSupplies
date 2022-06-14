@@ -1,0 +1,19 @@
+function supplies(input) {
+
+
+let pencils = Number(input[0]);
+let markers = Number(input[1]);
+let cleaner = Number(input[2]);
+let discount = Number(input[3]);
+
+let fullPrice = (pencils * 5.8)+(markers * 7.2)+(cleaner * 1.2);
+let discountAmount = fullPrice * discount * 0.01;
+
+console.log(fullPrice - discountAmount);
+
+}
+supplies(["4 ",
+"2 ",
+"5 ",
+"13 "]
+);

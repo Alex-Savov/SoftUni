@@ -1,0 +1,21 @@
+function repaint(input){
+
+let plastic = (Number(input[0]) + 2) * 1.5;
+let paint = Number(input[1]);
+paint = (paint + paint * 0.1) * 14.5;
+let thinner = Number(input[2]) * 5;
+let workHr = Number(input[3]);
+
+let materialCost = plastic + paint + thinner + 0.4;
+let laborHr = materialCost * 0.3;
+let laborCost = laborHr * workHr;
+let finalSum = materialCost + laborCost;
+
+console.log(finalSum);
+
+}
+repaint(["5 ",
+"10 ",
+"10 ",
+"1 "]
+);

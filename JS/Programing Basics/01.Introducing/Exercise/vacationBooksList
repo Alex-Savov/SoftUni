@@ -1,0 +1,15 @@
+function vacBookList(input){
+
+let pages = Number(input[0]);
+let pagesPerHr = Number(input[1]);
+let dueDays = Number(input[2]);
+
+let hoursNeeded = pages / pagesPerHr;
+
+console.log(hoursNeeded / dueDays);
+
+}
+vacBookList(["432 ",
+"15 ",
+"4 "]
+);

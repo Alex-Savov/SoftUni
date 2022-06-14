@@ -1,0 +1,12 @@
+function plantingBackyard(input){
+
+let area = Number(input[0]);
+let fullPrice = area * 7.61;
+let discount = fullPrice * 0.18;
+let finalPrice = fullPrice - discount;
+
+console.log(`The final price is: ${finalPrice} lv.`);
+console.log(`The discount os: ${discount} lv.`);
+
+}
+plantingBackyard([150]);

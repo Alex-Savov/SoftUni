@@ -1,0 +1,52 @@
+function salesCommision(input){
+
+let town = input[0];
+let salesAmount = Number(input[1]);
+let commisionPercent = 0;
+
+if(salesAmount < 0){
+    return console.log('error');
+}
+
+if(town === 'Sofia'){
+    if(salesAmount > 0 && salesAmount <=500){
+        commisionPercent = 5;
+    }else if(salesAmount <= 1000){
+        commisionPercent = 7;
+    }else if(salesAmount <= 10000){
+        commisionPercent = 8;
+    }else{
+        commisionPercent = 12;
+    }
+}else if(town === 'Varna'){
+    if(salesAmount > 0 && salesAmount <=500){
+        commisionPercent = 4.5;
+    }else if(salesAmount <= 1000){
+        commisionPercent = 7.5;
+    }else if(salesAmount <= 10000){
+        commisionPercent = 10;
+    }else{
+        commisionPercent = 13;
+    }
+}else if(town === 'Plovdiv'){
+    if(salesAmount > 0 && salesAmount <=500){
+        commisionPercent = 5.5;
+    }else if(salesAmount <= 1000){
+        commisionPercent = 8;
+    }else if(salesAmount <= 10000){
+        commisionPercent = 12;
+    }else{
+        commisionPercent = 14.5;
+    }
+}else{
+    return console.log('error');
+}
+
+console.log((salesAmount * commisionPercent * 0.01).toFixed(2));
+
+}
+salesCommision(["Kaspichan",
+"0"])
+
+
+;

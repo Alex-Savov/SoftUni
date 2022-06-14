@@ -1,0 +1,22 @@
+function plus15Min(input){
+
+let hr = Number(input[0]);
+let min = Number(input[1]);
+
+let sumMinutes = hr * 60 + min + 15;
+
+let finalHr = Math.floor(sumMinutes / 60);
+let finalMin = sumMinutes % 60;
+
+if(finalHr === 24){
+    finalHr = 0;
+}
+
+if(finalMin < 10){
+    console.log(`${finalHr}:0${finalMin}`);
+}else{
+    console.log(`${finalHr}:${finalMin}`);
+}
+
+}
+plus15Min(["0", "01"]);

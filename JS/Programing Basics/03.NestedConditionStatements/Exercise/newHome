@@ -1,0 +1,63 @@
+function newHome(input){
+
+let flower = input[0];
+let amountFlowers = Number(input[1]);
+let budget = Number(input[2]);
+let singlePrice = 0;
+
+//"Roses", "Dahlias", "Tulips", "Narcissus", "Gladiolus"
+
+switch(flower){
+    case 'Roses':
+        if(amountFlowers > 80){
+            singlePrice = 5 - (5 * 0.1);
+        }else{
+            singlePrice = 5;
+        }
+        break;
+    case 'Dahlias':
+        if(amountFlowers > 90){
+            singlePrice = 3.8 - (3.8 * 0.15);
+        }else{
+            singlePrice = 3.8;
+        }
+        break;
+    case 'Tulips':
+        if(amountFlowers > 80){
+            singlePrice = 2.8 - (2.8 * 0.15);
+        }else{
+            singlePrice = 2.8;
+        }
+        break;
+    case 'Narcissus':
+        if(amountFlowers < 120){
+            singlePrice = 3 + (3 * 0.15);
+        }else{
+            singlePrice = 3;
+        }
+        break;
+    case 'Gladiolus':
+        if(amountFlowers < 80){
+            singlePrice = 2.5 + (2.5 * 0.2);
+        }else{
+            singlePrice = 2.5;
+        } 
+        break;
+    default:
+        break;
+}
+
+let finalSum = amountFlowers * singlePrice;
+
+if(budget < finalSum){
+    console.log(`Not enough money, you need ${Math.abs(finalSum - budget).toFixed(2)} leva more.`)
+}else{
+    console.log(`Hey, you have a great garden with ${amountFlowers} ${flower} and ${Math.abs(budget - finalSum).toFixed(2)} leva left.`)
+}
+
+}
+newHome(['Gladiolus',
+    '64',
+    '160'])
+
+;

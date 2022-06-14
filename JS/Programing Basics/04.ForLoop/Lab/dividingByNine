@@ -1,0 +1,28 @@
+function divide(input){
+
+let startNumber = Number(input[0]);
+let endNumber = Number(input[1]);
+let sum = 0;
+
+for (let index = startNumber; index <= endNumber; index++) {
+   if (index % 9 == 0) {
+        sum += index;
+        
+
+   }
+    
+}
+
+console.log(`The sum: ${sum}`);
+
+for (let index = startNumber; index <= endNumber; index++) {
+    if (index % 9 == 0) {
+        console.log(index);
+         
+ 
+    }
+     
+ }
+
+}
+divide(["100", "200"])

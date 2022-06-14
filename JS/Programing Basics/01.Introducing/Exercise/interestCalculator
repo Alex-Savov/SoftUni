@@ -1,0 +1,14 @@
+function intCalc(input){
+
+let deposit = Number(input[0]);
+let lenght = Number(input[1]);
+let annualyInterestPercentage = Number(input[2]);
+let annualyInterest = deposit * annualyInterestPercentage * 0.01;
+
+console.log(deposit + lenght * (annualyInterest / 12));
+
+}
+intCalc(["2350",
+"6 ",
+"7 "]
+);

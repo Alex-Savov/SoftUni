@@ -1,0 +1,30 @@
+function shopping(input){
+
+let budget = Number(input[0]);
+let graficCards = Number(input[1]);
+let proccesors = Number(input[2]);
+let memmorySticks = Number(input[3]);
+
+let graficCardsSum = graficCards * 250;
+let proccesorsSum = proccesors * (graficCardsSum * 0.35);
+let memmorySticksSum = memmorySticks * (graficCardsSum * 0.1);
+
+let finalPrice = graficCardsSum + proccesorsSum + memmorySticksSum;
+
+if(graficCards > proccesors){
+    finalPrice -= finalPrice * 0.15;
+}
+
+if(budget < finalPrice){
+    console.log(`Not enough money! You need ${Math.abs(finalPrice - budget).toFixed(2)} leva more!`)
+}else{
+    console.log(`You have ${Math.abs(budget - finalPrice).toFixed(2)} leva left!`)
+}
+
+}
+shopping(["920.45",
+"3",
+"1",
+"1"])
+
+;

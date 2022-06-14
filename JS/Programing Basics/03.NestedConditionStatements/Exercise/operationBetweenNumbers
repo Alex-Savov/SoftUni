@@ -1,0 +1,38 @@
+function operation(input){
+
+let firstNumber = Number(input[0]);
+let secondNumber = Number(input[1]);
+let operat = input[2];
+let result = 0;
+
+if((operat === '/' || operat === '%' )&& secondNumber == 0){
+    return console.log(`Cannot divide ${firstNumber} by zero`)
+}else if(operat === '+'){
+    result = firstNumber + secondNumber;
+}else if(operat === '-'){
+    result = firstNumber - secondNumber;
+}else if(operat === '*'){
+    result = firstNumber * secondNumber;
+}else if(operat === '/'){
+    result = firstNumber / secondNumber;
+}else if(operat === '%'){
+    result = firstNumber % secondNumber;
+}
+    
+if(operat === '+' 
+|| operat === '-'
+|| operat === '*'){
+    console.log(`${firstNumber} ${operat} ${secondNumber} = ${result} - ${(result % 2 == 0) ? 'even' : 'odd'}`);
+}else if(operat === '/'){
+    console.log(`${firstNumber} / ${secondNumber} = ${result.toFixed(2)}`);
+}else{
+    console.log(`${firstNumber} % ${secondNumber} = ${result}`)
+}
+
+}
+operation(["112",
+"0",
+"/"])
+
+;
+

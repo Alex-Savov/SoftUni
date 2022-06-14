@@ -1,0 +1,17 @@
+function aquaruim(input){
+
+let lenght = Number(input[0]);
+let width = Number(input[1]);
+let hight = Number(input[2]);
+let percantage = Number(input[3]);
+
+let volume = lenght * width * hight;
+let percentOccupied = volume * percantage * 0.01;
+
+console.log((volume - percentOccupied) / 1000);
+}
+aquaruim(["85 ",
+"75 ",
+"47 ",
+"17 "]
+);

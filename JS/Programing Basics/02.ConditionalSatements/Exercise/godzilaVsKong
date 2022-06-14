@@ -1,0 +1,27 @@
+function godzilaVsKong(input){
+
+let budget = Number(input[0]);
+let statistCount = Number(input[1]);
+let clothesPrice = Number(input[2]);
+let decorPrice = budget * 0.1;
+
+if(statistCount >= 150){
+    clothesPrice = clothesPrice - (clothesPrice * 0.1);
+}
+
+let moneyNeeded = (clothesPrice * statistCount) + decorPrice;
+
+if(budget < moneyNeeded){
+    console.log('Not enough money!');
+    console.log(`Wingard needs ${Math.abs(moneyNeeded - budget).toFixed(2)} leva more.`);
+}else{
+    console.log('Action!');
+    console.log(`Wingard starts filming with ${Math.abs(budget - moneyNeeded).toFixed(2)} leva left.`)
+}
+
+}
+godzilaVsKong(["15437.62",
+"186",
+"57.99"])
+
+;

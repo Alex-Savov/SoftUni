@@ -1,0 +1,9 @@
+function incToSm(input){
+
+let inch = Number(input[0]);
+let inchToSm = 2.54;
+let sm = inch * inchToSm;
+console.log(sm);
+
+}
+incToSm([1]);
