@@ -1,0 +1,14 @@
+function triangle(n){
+
+for(i = 1; i <= n; i++){
+
+    let line = new Array(i);
+
+    for(j = 1; j <= i; j++){
+        line[j - 1] = i; 
+    }
+
+    console.log(line.join(' '));
+}
+}
+triangle(5)

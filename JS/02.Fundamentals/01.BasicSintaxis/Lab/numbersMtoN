@@ -1,0 +1,11 @@
+function numbers(m, n) {
+
+    for (i = m; m >= n; m--) {
+        console.log(m);
+    }
+}
+
+numbers(18, 0);
+numbers(25, 1);
+numbers(2, 0);
+numbers(13, 9);

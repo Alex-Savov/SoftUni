@@ -1,0 +1,59 @@
+function vacation(visitors, groupType, day) {
+
+    let price = 0;
+    let discount = 0;
+
+    if (groupType === 'Students') {
+        if (day === 'Friday') {
+            price = 8.45;
+        } else if (day === 'Saturday') {
+            price = 9.80;
+        } else {
+            price = 10.46;
+        }
+
+        if (visitors >= 30) {
+            discount = 15;
+        }
+
+    } else if (groupType === 'Business') {
+        if (day === 'Friday') {
+            price = 10.90;
+        } else if (day === 'Saturday') {
+            price = 15.60;
+        } else {
+            price = 16;
+        }
+
+        if (visitors >= 100) {
+            visitors -= 10;
+        }
+
+    } else {
+        if (day === 'Friday') {
+            price = 15;
+        } else if (day === 'Saturday') {
+            price = 20;
+        } else {
+            price = 22.50;
+        }
+
+        if (visitors >= 10 && visitors <= 20) {
+            discount = 5;
+        }
+    }
+
+    let finalPrice = visitors * price;
+
+    if (discount != 0) {
+        finalPrice -= (finalPrice * discount * 0.01);
+    }
+
+    console.log( `Total price: ${finalPrice.toFixed(2)}` );
+}
+vacation(40,
+    "Regular",
+    "Saturday"
+    
+    )
+    
