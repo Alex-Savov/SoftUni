@@ -1,0 +1,26 @@
+function smallestNumber(input){
+
+let smallestNum = Number.MAX_SAFE_INTEGER;
+let index = 0;
+let argument = input[index];
+
+while (argument != 'Stop') {
+    let currentNumber = Number(argument);
+
+    if (currentNumber < smallestNum) {
+        smallestNum = currentNumber;
+    }
+
+    index++;
+    argument = input[index];
+}
+
+console.log(smallestNum);
+
+}
+smallestNumber(["45",
+"-20",
+"7",
+"99",
+"Stop"])
+;
